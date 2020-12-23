@@ -33,6 +33,8 @@ namespace Client
                 options.UseLoggerFactory(new LoggerFactory(new[] { new Microsoft.Extensions.Logging.Debug.DebugLoggerProvider() }));
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
+
+            Configure_CompositionRoot(services);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -77,6 +79,15 @@ namespace Client
                     spa.UseAngularCliServer(npmScript: "start");
                 }
             });
+        }
+
+        private void Configure_CompositionRoot(IServiceCollection services)
+        {
+            //Managers
+
+
+            //Resources
+            services.AddTransient<PasswordKeeper.Resource.Configuration.IUserResource, PasswordKeeper.Resource.Configuration.UserResource>();
         }
     }
 }

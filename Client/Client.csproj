@@ -18,6 +18,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Runtime.Mapper" Version="0.0.4-alpha" />
   </ItemGroup>
 
   <ItemGroup>
@@ -29,6 +30,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PasswordKeeper.Database\PasswordKeeper.Database.csproj" />
+    <ProjectReference Include="..\PasswordKeeper.Manager.Configuration\PasswordKeeper.Manager.Configuration.csproj" />
+    <ProjectReference Include="..\PasswordKeeper.Resource.Configuration\PasswordKeeper.Resource.Configuration.csproj" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

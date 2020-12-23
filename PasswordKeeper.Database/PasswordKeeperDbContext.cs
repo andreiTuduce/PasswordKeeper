@@ -14,6 +14,5 @@ namespace PasswordKeeper.Database
         public PasswordKeeperDbContext(DbContextOptions<PasswordKeeperDbContext> options)
     : base(options)
         { }
-
     }
 }
