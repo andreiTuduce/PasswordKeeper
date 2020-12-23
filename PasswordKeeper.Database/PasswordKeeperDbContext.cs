@@ -5,7 +5,6 @@ namespace PasswordKeeper.Database
 {
     public class PasswordKeeperDbContext : IdentityDbContext
     {
-
         public DbSet<Models.UserProfile> UserProfiles { get; set; }
 
         public DbSet<Models.Site> Sites { get; set; }
