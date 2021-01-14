@@ -29,9 +29,25 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\app\home\login-routing.module.ts" />
+    <None Remove="ClientApp\src\app\home\login.module.ts" />
+    <None Remove="ClientApp\src\app\home\login\login.component.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\PasswordKeeper.Database\PasswordKeeper.Database.csproj" />
     <ProjectReference Include="..\PasswordKeeper.Manager.Configuration\PasswordKeeper.Manager.Configuration.csproj" />
     <ProjectReference Include="..\PasswordKeeper.Resource.Configuration\PasswordKeeper.Resource.Configuration.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ClientApp\src\app\home\register\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\home\login-routing.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\home\login.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\home\login\login.component.ts" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

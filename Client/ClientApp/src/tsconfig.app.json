@@ -1,12 +1,7 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
-    "outDir": "../out-tsc/app",
-    //"baseUrl": "./",
-    //"types": [ "node" ],
-    //"paths": {
-      //example       "administration/*": [ "app/administration/*" ], * following urls can be whatever
-    //}
+    "outDir": "../out-tsc/app"
   },
   "exclude": [
     "src/test.ts",
