@@ -1,6 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup } from "@angular/forms";
 
+import { LoginService } from "../core/login.service";
+
 @Component({
   selector: 'login',
   templateUrl: './login.component.html',
@@ -10,12 +12,18 @@ import { FormBuilder, FormGroup } from "@angular/forms";
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private loginService: LoginService) { }
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
       username: '',
       password: '',
+    });
+  }
+
+  onClick() {
+    this.loginService.getUser().subscribe(result => {
+      console.log(result);
     });
   }
 }
