@@ -32,6 +32,7 @@
     <None Remove="ClientApp\src\app\login\login-routing.module.ts" />
     <None Remove="ClientApp\src\app\login\login.model.ts" />
     <None Remove="ClientApp\src\app\login\login.module.ts" />
+    <None Remove="ClientApp\src\app\login\login\login - Copy.component.ts" />
     <None Remove="ClientApp\src\app\login\login\login.component.ts" />
     <None Remove="ClientApp\src\app\shared\shared-module.ts" />
     <None Remove="ClientApp\tsconfig.json" />
@@ -48,13 +49,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ClientApp\src\app\login\register\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <TypeScriptCompile Include="ClientApp\src\app\login\login-routing.module.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\login\login.model.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\login\login.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\login\register\login - Copy.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\login\login\login.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\shared-module.ts" />
   </ItemGroup>

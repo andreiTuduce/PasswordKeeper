@@ -6,7 +6,7 @@ import { RouterModule } from "@angular/router";
 
 import { LoginRoutingModule } from "./login-routing.module";
 
-import { LoginService } from "./core/login.service";
+import { UserService } from "../login/user.service";
 
 import { LoginComponent } from "./login/login.component";
 
@@ -15,7 +15,7 @@ import { LoginComponent } from "./login/login.component";
     LoginComponent
   ],
   providers: [
-    LoginService
+    UserService
   ],
   imports: [
     CommonModule,

@@ -1,5 +1,6 @@
-﻿using PasswordKeeper.Resource.Configuration;
-using System;
+﻿using PasswordKeeper.Manager.Configuration.Models;
+using PasswordKeeper.Resource.Configuration;
+using Runtime.Mapper;
 
 namespace PasswordKeeper.Manager.Configuration
 {
@@ -10,6 +11,11 @@ namespace PasswordKeeper.Manager.Configuration
         public UserManager(IUserResource userResource)
         {
             this.userResource = userResource;
+        }
+
+        public void SaveUser(UserProfile userProfile)
+        {
+            userResource.Save(userProfile.DeepCopyTo<Database.Models.UserProfile>());
         }
     }
 }

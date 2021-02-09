@@ -84,7 +84,7 @@ namespace Client
         private void Configure_CompositionRoot(IServiceCollection services)
         {
             //Managers
-
+            services.AddTransient<PasswordKeeper.Manager.Configuration.IUserManager, PasswordKeeper.Manager.Configuration.UserManager>();
 
             //Resources
             services.AddTransient<PasswordKeeper.Resource.Configuration.IUserResource, PasswordKeeper.Resource.Configuration.UserResource>();

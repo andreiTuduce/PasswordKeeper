@@ -1,5 +1,5 @@
 <div>
-  <form [formGroup]="loginForm">
+  <form [formGroup]="loginForm" (ngSubmit)="submitForm()">
     <label for="username">Username</label>
     <input type="text" class="form-control" id="username"
            formControlName="username"
@@ -10,6 +10,6 @@
            formControlName="password"
            required
            name="password" />
+    <button type="submit"> Submit </button>
   </form>
-  <button (click)="onClick()"> Test request </button>
 </div>

@@ -1,7 +1,9 @@
 import { Component, OnInit } from "@angular/core";
-import { FormBuilder, FormGroup } from "@angular/forms";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
-import { LoginService } from "../core/login.service";
+import { UserProfile } from "../login.model";
+
+import { UserService } from "../user.service";
 
 @Component({
   selector: 'login',
@@ -12,18 +14,27 @@ import { LoginService } from "../core/login.service";
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private loginService: LoginService) { }
+  constructor(private formBuilder: FormBuilder,
+    private userService: UserService
+  ) { }
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
-      username: '',
-      password: '',
+      username: ['', Validators.required],
+      password: ['', Validators.required]
     });
   }
 
-  onClick() {
-    this.loginService.getUser().subscribe(result => {
-      console.log(result);
-    });
+  submitForm() {
+    if (this.loginForm.valid) {
+      const userProfile = <UserProfile>{
+        username: this.loginForm.get("username").value,
+        password: this.loginForm.get("password").value
+      }
+
+      this.userService.saveUser(userProfile).subscribe(result => {
+        console.log(result);
+      });
+    }
   }
 }

@@ -1,6 +1,9 @@
-﻿namespace PasswordKeeper.Manager.Configuration
+﻿using PasswordKeeper.Manager.Configuration.Models;
+
+namespace PasswordKeeper.Manager.Configuration
 {
-    interface IUserManager
+    public interface IUserManager
     {
+        void SaveUser(UserProfile userProfile);
     }
 }
