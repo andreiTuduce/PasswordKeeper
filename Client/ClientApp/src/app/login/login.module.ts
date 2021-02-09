@@ -9,10 +9,12 @@ import { LoginRoutingModule } from "./login-routing.module";
 import { UserService } from "../login/user.service";
 
 import { LoginComponent } from "./login/login.component";
+import { RegisterComponent } from "./register/register.component";
 
 @NgModule({
   declarations: [
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   providers: [
     UserService

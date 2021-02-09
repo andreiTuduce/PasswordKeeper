@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { UserProfile } from "./login.model";
+import { UserLogin,  UserRegister } from "./login.model";
 
 @Injectable()
 export class UserService {
@@ -10,11 +10,11 @@ export class UserService {
   
   constructor(private http: HttpClient) { }
 
-  saveUser(userProfile: UserProfile): Observable<any> {
+  saveUser(userProfile: UserRegister): Observable<any> {
     return this.http.post(this.baseUrl + '/SaveUser', userProfile);
   }
 
-  loadUser(userLogin: UserProfile): Observable<UserProfile> {
-    return this.http.post<UserProfile>(this.baseUrl + '/LoadUser', userLogin);
+  loadUser(userLogin: UserLogin): Observable<UserRegister> {
+    return this.http.post<UserRegister>(this.baseUrl + '/LoadProfile', userLogin);
   }
 }

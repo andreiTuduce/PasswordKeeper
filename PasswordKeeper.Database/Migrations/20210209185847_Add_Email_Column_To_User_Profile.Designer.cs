@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PasswordKeeper.Database;
 
 namespace PasswordKeeper.Database.Migrations
 {
     [DbContext(typeof(PasswordKeeperDbContext))]
-    partial class PasswordKeeperDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210209185847_Add_Email_Column_To_User_Profile")]
+    partial class Add_Email_Column_To_User_Profile
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

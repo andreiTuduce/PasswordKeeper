@@ -29,6 +29,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\app\core\core.module.ts" />
+    <None Remove="ClientApp\src\app\core\services\session-state-storage.ts" />
     <None Remove="ClientApp\src\app\login\login-routing.module.ts" />
     <None Remove="ClientApp\src\app\login\login.model.ts" />
     <None Remove="ClientApp\src\app\login\login.module.ts" />
@@ -49,10 +51,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\core\core.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\core\services\session-state-storage.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\login\login-routing.module.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\login\login.model.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\login\login.module.ts" />
-    <TypeScriptCompile Include="ClientApp\src\app\login\register\login - Copy.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\login\register\register.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\login\login\login.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\shared-module.ts" />
   </ItemGroup>

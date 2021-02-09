@@ -17,5 +17,10 @@ namespace PasswordKeeper.Manager.Configuration
         {
             userResource.Save(userProfile.DeepCopyTo<Database.Models.UserProfile>());
         }
+
+        public UserProfile LoadProfile(string username, string password)
+        {
+           return userResource.LoadUser(username, password).DeepCopyTo<UserProfile>();
+        }
     }
 }

@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { NavMenuComponent } from './shared/nav-menu/nav-menu.component';
 import { LoginModule } from './login/login.module';
 import { LoginComponent } from './login/login/login.component';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { LoginComponent } from './login/login/login.component';
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
+    CoreModule,
     LoginModule,
     RouterModule.forRoot([
       { path: '', component: LoginComponent, pathMatch: 'full' },

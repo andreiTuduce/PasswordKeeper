@@ -26,5 +26,11 @@ namespace Client.Controllers
 
             return Ok();
         }
+
+        [HttpPost("LoadProfile")]
+        public UserProfile LoadProfile([FromBody]UserProfile userProfile)
+        {
+            return userManager.LoadProfile(userProfile.Username, userProfile.Password).DeepCopyTo<UserProfile>();
+        }
     }
 }

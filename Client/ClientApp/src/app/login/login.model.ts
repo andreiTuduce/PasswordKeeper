@@ -1,5 +1,8 @@
-export interface UserProfile {
-  id: string,
+export interface UserLogin {
   username: string,
-  password: string,
+  password: string
+}
+
+export interface UserRegister extends UserLogin {
+  email: string
 }
