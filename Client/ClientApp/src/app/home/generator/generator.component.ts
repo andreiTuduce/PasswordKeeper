@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './generator.component.html',
   styleUrls: ['./generator.component.css']
 })
+
 export class GeneratorComponent implements OnInit {
 
   constructor() { }

@@ -16,4 +16,5 @@ import { PasswordViewComponent } from './password-view/password-view.component';
     CommonModule,
   ]
 })
+
 export class HomeModule { }

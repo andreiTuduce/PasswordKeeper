@@ -4,7 +4,10 @@ import { Observable } from 'rxjs';
 
 import { UserLogin,  UserRegister } from "./login.model";
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
+
 export class UserService {
   private baseUrl = 'user';
   

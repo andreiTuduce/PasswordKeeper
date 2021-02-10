@@ -85,9 +85,13 @@ namespace Client
         {
             //Managers
             services.AddTransient<PasswordKeeper.Manager.Configuration.IUserManager, PasswordKeeper.Manager.Configuration.UserManager>();
+            services.AddTransient<PasswordKeeper.Manager.Configuration.ISiteManager, PasswordKeeper.Manager.Configuration.SiteManager>();
+            services.AddTransient<PasswordKeeper.Manager.Configuration.IPasswordManager, PasswordKeeper.Manager.Configuration.PasswordManager>();
 
             //Resources
             services.AddTransient<PasswordKeeper.Resource.Configuration.IUserResource, PasswordKeeper.Resource.Configuration.UserResource>();
+            services.AddTransient<PasswordKeeper.Resource.Configuration.ISiteResource, PasswordKeeper.Resource.Configuration.SiteResource>();
+            services.AddTransient<PasswordKeeper.Resource.Configuration.IPasswordResource, PasswordKeeper.Resource.Configuration.PasswordResource>();
         }
     }
 }
