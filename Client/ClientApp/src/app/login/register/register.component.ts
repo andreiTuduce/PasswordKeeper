@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { Router } from "@angular/router";
 
 import { UserRegister } from "../login.model";
 
@@ -15,7 +16,8 @@ export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
 
   constructor(private formBuilder: FormBuilder,
-    private userService: UserService
+    private userService: UserService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -42,5 +44,9 @@ export class RegisterComponent implements OnInit {
         console.log(result);
       });
     }
+  }
+
+  nagivateToLogin() {
+    this.router.navigateByUrl('/');
   }
 }

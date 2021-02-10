@@ -9,6 +9,8 @@ import { NavMenuComponent } from './shared/nav-menu/nav-menu.component';
 import { LoginModule } from './login/login.module';
 import { LoginComponent } from './login/login/login.component';
 import { CoreModule } from './core/core.module';
+import { HomeModule } from './home/home.module';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -21,8 +23,10 @@ import { CoreModule } from './core/core.module';
     FormsModule,
     CoreModule,
     LoginModule,
+    HomeModule,
     RouterModule.forRoot([
       { path: '', component: LoginComponent, pathMatch: 'full' },
+      { path: 'home', component: HomeComponent },
     ])
   ],
   providers: [],

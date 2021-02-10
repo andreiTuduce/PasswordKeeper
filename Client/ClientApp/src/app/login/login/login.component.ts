@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { Router } from "@angular/router";
 import { SessionStateStorageService } from "../../core/services/session-state-storage";
 
 import { UserLogin, UserRegister } from "../login.model";
@@ -17,7 +18,8 @@ export class LoginComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder,
     private userService: UserService,
-    private sessionStorageService: SessionStateStorageService
+    private sessionStorageService: SessionStateStorageService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -36,7 +38,12 @@ export class LoginComponent implements OnInit {
 
       this.userService.loadUser(userLogin).subscribe((result: UserRegister) => {
         this.sessionStorageService.setItem("user", result);
+        this.router.navigateByUrl('/home');
       });
     }
+  }
+
+  navigateToRegister() {
+    this.router.navigateByUrl('/register');
   }
 }

@@ -6,8 +6,6 @@ using System;
 
 namespace Client.Controllers
 {
-    [ApiController]
-    [Route("[controller]")]
     public class UserController : Controller
     {
         private readonly IUserManager userManager;
@@ -17,7 +15,7 @@ namespace Client.Controllers
             this.userManager = userManager;
         }
 
-        [HttpPost("SaveUser")]
+        [HttpPost]
         public IActionResult SaveUser([FromBody]UserProfile userProfile)
         {
             userProfile.ID = Guid.NewGuid();
@@ -27,7 +25,7 @@ namespace Client.Controllers
             return Ok();
         }
 
-        [HttpPost("LoadProfile")]
+        [HttpPost]
         public UserProfile LoadProfile([FromBody]UserProfile userProfile)
         {
             return userManager.LoadProfile(userProfile.Username, userProfile.Password).DeepCopyTo<UserProfile>();
