@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HomeService } from '../home.service';
 
 @Component({
   selector: 'generator',
@@ -8,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 
 export class GeneratorComponent implements OnInit {
 
-  constructor() { }
+  constructor(private homeService: HomeService) { }
 
   ngOnInit() {
+  }
+
+  onClick(stringValue: string) {
+    this.homeService.sentViaService(stringValue);
   }
 
 }

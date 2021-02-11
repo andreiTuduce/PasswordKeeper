@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { HomeService } from '../home.service';
 
 @Component({
   selector: 'password-view',
@@ -6,11 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./password-view.component.css']
 })
 
-export class PasswordViewComponent implements OnInit {
+export class PasswordViewComponent {
+  @Input() inputValue: number;
+  @Output() sendValue: EventEmitter<number> = new EventEmitter<number>();
 
-  constructor() { }
+  message: string;
+
+  constructor(private homeService: HomeService) { }
 
   ngOnInit() {
+    this.homeService.$observableWay.subscribe(value => this.message = value);
   }
 
+  onClick() {
+    this.sendValue.emit(this.inputValue * 2);
+  }
 }

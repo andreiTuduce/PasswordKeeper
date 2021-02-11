@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Password, Site } from './home.model';
 
 @Injectable({
@@ -8,9 +8,15 @@ import { Password, Site } from './home.model';
 })
 
 export class HomeService {
+  $observableWay: Observable<string>;
+
   private baseUrl = 'home';
 
-  constructor(private http: HttpClient) { }
+  private observableWaySubject: BehaviorSubject<string> = new BehaviorSubject<string>("init");
+
+  constructor(private http: HttpClient) {
+    this.$observableWay = this.observableWaySubject.asObservable();
+  }
 
   getSites(userID: string): Observable<Site[]> {
     return this.http.post<Site[]>(this.baseUrl + '/ListSites', { userID });
@@ -26,5 +32,9 @@ export class HomeService {
 
   addPassword(password: Password): Observable<any> {
     return this.http.post(this.baseUrl + '/AddPassword', password);
+  }
+
+  sentViaService(stringValue: string) {
+    this.observableWaySubject.next(stringValue);
   }
 }

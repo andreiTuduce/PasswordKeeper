@@ -1,5 +1,31 @@
 <div>
+  Communication ways
 
-  
+  <div>
+    Input and output
+    <password-view [inputValue]="inputValue" (sendValue)="onSendValue($event)"></password-view>
 
+    <div>
+      Updated value on click
+      {{inputValue}}
+    </div>
+  </div>
+
+  <div>
+    Two way binding
+    <input type="text" [(ngModel)]="val" />
+    {{val}}
+  </div>
+
+  <br />
+  <div>
+    Service comunication with observable and behaviour subject
+    <generator></generator>
+  </div>
+
+
+  <div>
+    Message recieved in home 
+  {{message}}
+  </div>
 </div>
