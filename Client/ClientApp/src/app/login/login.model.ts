@@ -4,5 +4,6 @@ export interface UserLogin {
 }
 
 export interface UserRegister extends UserLogin {
+  id: string,
   email: string
 }

@@ -1,25 +1,32 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatDialogModule } from '@angular/material';
+import { FormsModule } from '@angular/forms';
 
 import { HomeComponent } from './home.component';
 import { GeneratorComponent } from './generator/generator.component';
 import { PasswordViewComponent } from './password-view/password-view.component';
-import { FormsModule } from '@angular/forms';
 import { HomeService } from './home.service';
+import { DialogFormComponent } from './dialog-form/dialog-form.component';
 
 
 @NgModule({
   declarations: [
     HomeComponent,
     GeneratorComponent,
-    PasswordViewComponent
+    PasswordViewComponent,
+    DialogFormComponent
+  ],
+  entryComponents: [
+    DialogFormComponent
   ],
   providers: [
     HomeService
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule
   ]
 })
 

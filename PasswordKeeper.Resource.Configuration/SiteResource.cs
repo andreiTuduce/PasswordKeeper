@@ -23,6 +23,8 @@ namespace PasswordKeeper.Resource.Configuration
         public void AddSite(Site site)
         {
             passwordKeeperDbContext.Sites.Add(site);
+
+            passwordKeeperDbContext.SaveChanges();
         }
 
         public Site[] GetSites(Guid userID)

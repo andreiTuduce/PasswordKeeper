@@ -19,7 +19,7 @@ export class HomeService {
   }
 
   getSites(userID: string): Observable<Site[]> {
-    return this.http.post<Site[]>(this.baseUrl + '/ListSites', { userID });
+    return this.http.post<Site[]>(this.baseUrl + '/GetSites', { userID });
   }
 
   getPassword(siteID: string): Observable<Password> {

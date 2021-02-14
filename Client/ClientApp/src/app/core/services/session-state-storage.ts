@@ -1,4 +1,5 @@
 import { Injectable } from "@angular/core";
+import { UserRegister } from "../../login/login.model";
 
 @Injectable({
   providedIn: 'root'
@@ -22,5 +23,11 @@ export class SessionStateStorageService {
 
   removeItem(key: string): void {
     sessionStorage.removeItem(key);
+  }
+
+  get selectedUserID(): string {
+    const user: UserRegister = JSON.parse(sessionStorage.getItem('user'));
+
+    return user.id;
   }
 }

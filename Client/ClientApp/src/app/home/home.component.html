@@ -1,4 +1,4 @@
-<div>
+<div *ngIf="isEnabled">
   Communication ways
 
   <div>
@@ -28,4 +28,15 @@
     Message recieved in home 
   {{message}}
   </div>
+</div>
+
+<div>
+  <div>
+    Add-Site
+  </div>
+</div>
+
+
+<div>
+  <password-view [inputValue]="inputValue" (sendValue)="onSendValue($event)"></password-view>
 </div>

@@ -20,9 +20,9 @@ namespace Client.Controllers
         }
 
         [HttpPost]
-        public Site[] GetSites([FromBody] Guid userID)
+        public Site[] GetSites([FromBody] ModelTest model)
         {
-            return siteManager.GetSites(userID).DeepCopyTo<Site[]>();
+            return siteManager.GetSites(model.UserID).DeepCopyTo<Site[]>();
         }
 
         [HttpGet]
@@ -34,6 +34,9 @@ namespace Client.Controllers
         [HttpPost]
         public IActionResult AddSite([FromBody] Site site)
         {
+            if(site.ID == Guid.Empty)
+            site.ID = Guid.NewGuid();
+
             siteManager.AddSite(site.DeepCopyTo<PasswordKeeper.Manager.Configuration.Models.Site>());
 
             return Ok();
@@ -45,6 +48,11 @@ namespace Client.Controllers
             passwordManager.AddPassword(generatedPassword.DeepCopyTo<PasswordKeeper.Manager.Configuration.Models.GeneratedPassword>());
 
             return Ok();
+        }
+
+        public class ModelTest
+        {
+            public Guid UserID { get; set; }
         }
     }
 }
